@@ -14,5 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    $data = [
+        'nome' => 'pippo',
+    ];
+    return view('home', $data);
+})->name('home');
+
+Route::get('/menu', function () {
+    return  view('header_menu');
+})->name('menu');
